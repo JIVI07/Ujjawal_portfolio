@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+        
+        .sidebar {
+            background: #1f1f1f;
+            width: 25%;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .sidebar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar h2 {
+            margin: 20px 0 10px;
+            font-size: 1.5em;
+        }
+        
+        .sidebar p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #aaaaaa;
+        }
+        
+        .sidebar .contact-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            background-color: #2d2d2d;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .contact-info .contact-item i {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        
+        .content {
+            flex: 1;
+            margin-left: 20px;
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .content h2 {
+            color: #ffcc00;
+            font-size: 1.8em;
+        }
+        
+        .content p {
+            line-height: 1.6;
+            color: #dddddd;
+        }
+        
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+        }
+        
+        .card h3 {
+            color: #ffcc00;
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+        
+        .card p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #bbbbbb;
+        }
+        
+        .experience {
+            margin-top: 40px;
+        }
+        
+        .experience h2 {
+            color: #ffcc00;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .experience-item {
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .experience-item h3 {
+            color: #ffcc00;
+            margin: 0 0 10px;
+        }
+        
+        .experience-item p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #bbbbbb;
+        }
+        
+        .skills {
+            margin-top: 40px;
+        }
+        
+        .skills h2 {
+            color: #ffcc00;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .skill {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            font-size: 1.2em;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar-container {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #ffcc00;
+            width: 0;
+            border-radius: 10px;
+            transition: width 2s ease;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            background-color: #3a3a3a;
+            color: #ffffff;
+        }
+        
+        .contact-form button {
+            background-color: #ffcc00;
+            color: #121212;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .contact-form button:hover {
+            background-color: #e6b800;
+        }
+        
+        .contact-form h2 {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="https://via.placeholder.com/100" alt="Profile Picture">
+            <h2>Ujjawal Raj</h2>
+            <p>Full Stack Developer</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: rajujjawal2003@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>Phone: +91 xxxxxxxxxx</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <p>Birthday: 15 jan, 2003</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Location: Haryana, India</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>About Me</h2>
+            <p>
+                I am a <span style="color: #ffcc00; font-weight: bold;">passionate</span> and <span style="color: #ffcc00; font-weight: bold;">driven Web Developer</span> with a deep interest in building <span style="color: #ffcc00; font-weight: bold;">scalable</span>,
+                <span style="color: #ffcc00; font-weight: bold;">high-performance applications</span>. With a strong foundation in both <span style="color: #ffcc00; font-weight: bold;">front-end</span> and <span style="color: #ffcc00; font-weight: bold;">back-end development</span>,
+                I specialize in using <span style="color: #ffcc00; font-weight: bold;">Python</span>, <span style="color: #ffcc00; font-weight: bold;">JavaScript</span>, and <span style="color: #ffcc00; font-weight: bold;">cloud technologies</span> such
+                as <span style="color: #ffcc00; font-weight: bold;">AWS</span>. I am experienced in building <span style="color: #ffcc00; font-weight: bold;">dynamic web applications</span> using frameworks like <span style="color: #ffcc00; font-weight: bold;">Django</span>,
+                <span style="color: #ffcc00; font-weight: bold;">React</span>, and <span style="color: #ffcc00; font-weight: bold;">Node.js</span>.
+            </p>
+
+            <p>
+                Throughout my <span style="color: #ffcc00; font-weight: bold;">internships</span> at prestigious companies like <span style="color: #ffcc00; font-weight: bold;">Tata Consultancy Services</span>, <span style="color: #ffcc00; font-weight: bold;">Citi ICG Technology</span>,
+                <span style="color: #ffcc00; font-weight: bold;">Hewlett Packard Enterprise</span>, and <span style="color: #ffcc00; font-weight: bold;">Accenture North America</span>, I've gained hands-on experience in <span style="color: #ffcc00; font-weight: bold;">software development</span>,
+                <span style="color: #ffcc00; font-weight: bold;">cybersecurity</span>, <span style="color: #ffcc00; font-weight: bold;">software engineering</span>, and <span style="color: #ffcc00; font-weight: bold;">advanced coding techniques</span>.
+                I have been involved in identifying <span style="color: #ffcc00; font-weight: bold;">vulnerabilities</span>, improving <span style="color: #ffcc00; font-weight: bold;">system security</span>, developing <span style="color: #ffcc00; font-weight: bold;">efficient workflows</span>,
+                and <span style="color: #ffcc00; font-weight: bold;">automating processes</span> to enhance <span style="color: #ffcc00; font-weight: bold;">productivity</span>.
+            </p>
+
+            <p>
+                I take pride in turning <span style="color: #ffcc00; font-weight: bold;">complex problems</span> into simple, intuitive, and <span style="color: #ffcc00; font-weight: bold;">elegant solutions</span>, always prioritizing <span style="color: #ffcc00; font-weight: bold;">quality</span>,
+                <span style="color: #ffcc00; font-weight: bold;">performance</span>, and <span style="color: #ffcc00; font-weight: bold;">user experience</span>. Outside of coding, I’m always looking to expand my skills in <span style="color: #ffcc00; font-weight: bold;">mobile app development</span>,
+                <span style="color: #ffcc00; font-weight: bold;">DevOps practices</span>, and the latest technologies.
+            </p>
+
+            <p>
+                I strive to continually evolve as a <span style="color: #ffcc00; font-weight: bold;">developer</span>, building applications that make a <span style="color: #ffcc00; font-weight: bold;">meaningful impact</span> and improve the lives of
+                users.
+            </p>
+            <h2>What I'm Doing</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Web Design</h3>
+                    <p>The most modern and high-quality design made at a professional level.</p>
+                </div>
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>High-quality development of sites at the professional level.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Photography</h3>
+                    <p>I make high-quality photos of any category at a professional level.</p>
+                </div>
+            </div>
+
+            <h2>Experience</h2>
+            <div class="experience">
+                <div class="experience-item">
+                    <h3><span style="color: #ffcc00; font-weight: bold;">Tata Consultancy Services</span> (Hybrid) - Intern, <span style="color: #ffcc00; font-weight: bold;">Identity and Access Management (IAM)</span></h3>
+                    <p>2024 - 2024</p>
+                    <ul>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Conducted</span> a detailed simulation on <span style="color: #ffcc00; font-weight: bold;">IAM principles</span>, identifying three critical vulnerabilities that compromised sensitive
+                            user data and proposing effective mitigation strategies.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Collaborated</span> with a <span style="color: #ffcc00; font-weight: bold;">cybersecurity team</span> to analyze existing IAM systems, providing actionable insights that enhanced
+                            overall system security and compliance.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Directed</span> the creation of comprehensive instructional documents, streamlining the onboarding process for new interns and accelerating response efficiency by <span style="color: #ffcc00; font-weight: bold;">30%</span>.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3><span style="color: #ffcc00; font-weight: bold;">Citi ICG Technology</span> (Software Development) (Hybrid) - Intern, <span style="color: #ffcc00; font-weight: bold;">Software Development</span></h3>
+                    <p>2024 - 2024</p>
+                    <ul>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Developed</span> a <span style="color: #ffcc00; font-weight: bold;">UML state diagram</span> that improved workflows in Citi’s loan department, reducing client wait times by
+                            <span style="color: #ffcc00; font-weight: bold;">two weeks</span>.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Designed</span> a Java-based application for <span style="color: #ffcc00; font-weight: bold;">stock market volatility analysis</span>, providing actionable insights on sector performance.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Proposed</span> machine learning models for <span style="color: #ffcc00; font-weight: bold;">credit risk analysis</span>, reducing reporting time by <span style="color: #ffcc00; font-weight: bold;">15 hours per month</span>.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3><span style="color: #ffcc00; font-weight: bold;">Hewlett Packard Enterprise</span> (Hybrid) - Intern, <span style="color: #ffcc00; font-weight: bold;">Software Engineering</span></h3>
+                    <p>2024 - 2024</p>
+                    <ul>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Designed</span> a <span style="color: #ffcc00; font-weight: bold;">RESTful web service</span> for employee management, reducing onboarding time by <span style="color: #ffcc00; font-weight: bold;">30%</span>                            through efficient automation of key processes.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Transformed</span> code coverage from <span style="color: #ffcc00; font-weight: bold;">60%</span> to <span style="color: #ffcc00; font-weight: bold;">85%</span> by implementing a
+                            rigorous testing framework, ensuring higher application reliability and performance.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Streamlined</span> employee management workflows by identifying bottlenecks and implementing optimized solutions, enhancing operational efficiency and productivity.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3><span style="color: #ffcc00; font-weight: bold;">Accenture North America</span> (Hybrid) - Intern, <span style="color: #ffcc00; font-weight: bold;">Coding: Development & Advanced Engineering</span></h3>
+                    <p>2024 - 2024</p>
+                    <ul>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Enhanced</span> search functionality with a <span style="color: #ffcc00; font-weight: bold;">Spring Boot-based Java class</span>, reducing query response times by <span style="color: #ffcc00; font-weight: bold;">30%</span>.</li>
+                        <li><span style="color: #ffcc00; font-weight: bold;">Reduced</span> error rates in production releases by <span style="color: #ffcc00; font-weight: bold;">40%</span> through automated testing integrated into <span style="color: #ffcc00; font-weight: bold;">Jenkins pipelines</span>.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">AWS</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Django</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">React</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Node.js</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">SQL</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Git/GitHub</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Docker</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Mobile Development (React Native)</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">DevOps</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                window.addEventListener('load', function() {
+                    const progressBars = document.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                });
+            </script>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-form">
+                    <h2>Send me a Message</h2>
+                    <form id="contact-form" onsubmit="sendEmail(event)">
+                        <input type="text" name="user_name" placeholder="Your Name" required>
+                        <input type="email" name="user_email" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <script>
+                (function() {
+                    emailjs.init("rajujjawal2003@gmail.com");
+                })();
+
+
+                function sendEmail(event) {
+                    event.preventDefault();
+
+                    const form = event.target;
+                    const formData = new FormData(form);
+
+                    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                        .then(function(response) {
+                            alert("Message sent successfully!");
+                            form.reset();
+                        }, function(error) {
+                            alert("Failed to send message. Please try again.");
+                        });
+                }
+            </script>
+</body>
+
+</html>
